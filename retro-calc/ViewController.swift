@@ -47,6 +47,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clearPressed(button : UIButton!){
+        if runningNumber != "" {
+        runningNumber = ""
+        }
+        if rightValString != "" {
+        rightValString = ""
+        }
+        if currentOperation != Operation.Empty {
+        currentOperation = Operation.Empty
+        }
+        if result != "" {
+        result = ""
+        }
+        leftValString = result
+        outputLabel.text = leftValString
+    }
+    
     @IBAction func numPressed(button : UIButton!){
         playSound()
         runningNumber += "\(button.tag)"
